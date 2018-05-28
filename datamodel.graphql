@@ -1,0 +1,24 @@
+type Player {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  mail: String! @unique
+  shots: [Shot!]!
+  games: [Game!]!
+}
+
+type Shot {
+  id: ID! @unique
+  shotAt: DateTime!
+  basketed: Boolean!
+  player: Player!
+  game: Game
+}
+
+type Game {
+  id: ID! @unique
+  startedAt: DateTime!
+  finishedAt: DateTime!
+  players: [Player!]!
+}
