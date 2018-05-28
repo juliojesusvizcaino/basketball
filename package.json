@@ -2,6 +2,7 @@
   "name": "basketball",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://juliojesusvizcaino.github.io/basketball/",
   "main": "index.js",
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -22,7 +23,9 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^1.1.0",
     "graphql": "^0.13.2",
+    "html-webpack-plugin": "^3.2.0",
     "relay-compiler": "^1.6.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
@@ -33,7 +36,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --host 0.0.0.0",
     "build": "webpack --mode production",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphqn.l --extensions js jsx"
+    "relay": "relay-compiler --src ./src --schema ./schema.graphqn.l --extensions js jsx",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",

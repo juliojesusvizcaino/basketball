@@ -1,7 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const bundlePath = path.resolve(__dirname, 'dist/');
+
+const htmlPlugin = new HtmlWebpackPlugin({
+  template: './public/index.html',
+  // filename: './index.html',
+});
 
 module.exports = {
   entry: './src/index.jsx',
@@ -21,7 +27,7 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    publicPath: bundlePath,
+    // publicPath: bundlePath,
     filename: 'bundle.js',
   },
   devServer: {
@@ -29,5 +35,5 @@ module.exports = {
     port: 3000,
     publicPath: 'http://localhost:3000/dist',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), htmlPlugin],
 };
